@@ -1,0 +1,17 @@
+{
+  "name": "kyno",
+  "version": "0.0.4",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "blitzuu",
+  "license": "ISC",
+  "dependencies": {
+    "easy-calculation": "^1.0.2",
+    "eris": "github:DonovanDMC/eris#bfa79b3e13931f448f3e2ed3ed4be2629b692c8e",
+    "mongoose": "^6.0.10",
+    "pretty-ms": "^7.0.1"
+  }
+}
