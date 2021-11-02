@@ -1,6 +1,7 @@
 module.exports = {
   name: "ready",
   execute(client) {
+    client.manager.init(client.user.id);
     console.log("Ready on " + client.user.username + "#" + client.user.discriminator + " client")
     client.shards.forEach(s => {
       setInterval(() => {
