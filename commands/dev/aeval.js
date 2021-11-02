@@ -9,7 +9,7 @@ function clean(text) {
 const Eris = require("eris")
 
 module.exports = {
-  name: "eval",
+  name: "aeval",
   devOnly: true,
 
   async execute(args, client, msg) {
@@ -20,11 +20,14 @@ module.exports = {
       if (typeof evaled !== "string") evaled = require("util").inspect(evaled);
       const t2 = Date.now();
       const durationContent = t2 - t1;
-      if (evaled.length > 1000) evaled = evaled.substring(0, 1000) + "...";
+      if (evaled.length > 1000) {
+        client.createMessage(msg.channel.id, '', {file: require('util').inspect(evaled), name: 'Output.txt'});
+        evaled = evaled.substring(0, 1000) + "...";
+      }
       const evalContent = clean(evaled);
       client.createMessage(msg.channel.id, {
         embed: {
-          title: "Eval",
+          title: "Async Eval",
           fields: [
             { name: "**Output**", value: "```xl\n" + evalContent + "```" },
             { name: "**Type**", value: "```css\n" + evalType + "```" }],
@@ -34,7 +37,7 @@ module.exports = {
         if (typeof err !== "string") err = require("util").inspect(err);
         client.createMessage(msg.channel.id, {
           embed: {
-            title: "Eval",
+            title: "Async Eval",
             fields: [
               { name: "**Output**", value: "```xl\n" + clean(err) + "```" }
             ]
@@ -45,7 +48,7 @@ module.exports = {
       if (typeof err !== "string") err = require("util").inspect(err);
       client.createMessage(msg.channel.id, {
         embed: {
-          title: "Eval",
+          title: "Async Eval",
           fields: [
             { name: "**Output**", value: "```xl\n" + clean(err) + "```" }
           ]
