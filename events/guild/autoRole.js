@@ -9,6 +9,6 @@ module.exports = {
       GuildID: guild.id
     });
     
-    member.addRole(autoRoleData.RoleID, "Kyno Autorole").catch(() => null)
+    member.addRole(autoRoleData.RoleID, "Ozzy Autorole").catch(() => null)
   }
 };
