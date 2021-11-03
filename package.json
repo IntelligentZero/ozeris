@@ -1,12 +1,12 @@
 {
-  "name": "kyno",
-  "version": "0.0.4",
+  "name": "ozzy",
+  "version": "5.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "blitzuu",
+  "author": "xenotic",
   "license": "ISC",
   "dependencies": {
     "easy-calculation": "^1.0.2",
